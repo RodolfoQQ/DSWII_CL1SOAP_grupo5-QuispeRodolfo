@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.0 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.06.08 a las 07:00:17 PM PET 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.cibertec.com/ws/objects">
+    <schemaBindings map="false">
+      <package name="com.cibertec.ws.objects"/>
+    </schemaBindings>
+    <bindings scd="tns:getUsuariosRequest">
+      <class ref="com.cibertec.ws.objects.GetUsuariosRequest"/>
+    </bindings>
+    <bindings scd="tns:getUsuariosResponse">
+      <class ref="com.cibertec.ws.objects.GetUsuariosResponse"/>
+    </bindings>
+    <bindings scd="~tns:usuariows">
+      <class ref="com.cibertec.ws.objects.Usuariows"/>
+    </bindings>
+    <bindings scd="tns:getUsuarioRequest">
+      <class ref="com.cibertec.ws.objects.GetUsuarioRequest"/>
+    </bindings>
+    <bindings scd="tns:getUsuarioResponse">
+      <class ref="com.cibertec.ws.objects.GetUsuarioResponse"/>
+    </bindings>
+    <bindings scd="tns:postUsuarioRequest">
+      <class ref="com.cibertec.ws.objects.PostUsuarioRequest"/>
+    </bindings>
+    <bindings scd="tns:postUsuarioResponse">
+      <class ref="com.cibertec.ws.objects.PostUsuarioResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
