@@ -5,12 +5,13 @@ import com.cibertec.ws.objects.Usuariows;
 
 import java.util.List;
 
-
-public interface IUsuarioService  {
+public interface IUsuarioService {
 
     List<Usuariows> listarUsuarios();
 
     Usuariows obtenerUsuarioPorId(int id);
 
     Usuariows registrarActualizarUsuario(Usuariows usuario);
+
+
 }

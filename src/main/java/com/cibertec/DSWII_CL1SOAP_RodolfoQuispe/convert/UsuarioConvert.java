@@ -9,7 +9,7 @@ import java.util.List;
 @Component
 public class UsuarioConvert {
 
-    public Usuario convertUsuarioWsToUsuario(Usuariows usuariows) {
+    public Usuario convertUsuariowsToUsuario(Usuariows usuariows) {
         Usuario usuario = new Usuario();
         usuario.setIdusuario(usuariows.getIdusuario());
         usuario.setNomusuario(usuariows.getNomusuario());
@@ -21,15 +21,15 @@ public class UsuarioConvert {
         return usuario;
     }
 
-    public List<Usuario> convertUsuarioWsToUsuario(List<Usuariows> usuariowsList) {
+    public List<Usuario> convertUsuariowsListToUsuarioList(List<Usuariows> usuariowsList) {
         List<Usuario> usuarioList = new ArrayList<>();
-        usuariowsList.forEach(usuariows -> {
-            usuarioList.add(convertUsuarioWsToUsuario(usuariows));
-        });
+        for (Usuariows usuariows : usuariowsList) {
+            usuarioList.add(convertUsuariowsToUsuario(usuariows));
+        }
         return usuarioList;
     }
 
-    public Usuariows convertUsuarioToUsuarioWs(Usuario usuario) {
+    public Usuariows convertUsuarioToUsuariows(Usuario usuario) {
         Usuariows usuariows = new Usuariows();
         usuariows.setIdusuario(usuario.getIdusuario());
         usuariows.setNomusuario(usuario.getNomusuario());
@@ -41,12 +41,13 @@ public class UsuarioConvert {
         return usuariows;
     }
 
-    public List<Usuariows> convertUsuarioToUsuarioWs(List<Usuario> usuarioList) {
+    public List<Usuariows> convertUsuarioListToUsuariowsList(List<Usuario> usuarioList) {
         List<Usuariows> usuariowsList = new ArrayList<>();
-        usuarioList.forEach(usuario -> {
-            usuariowsList.add(convertUsuarioToUsuarioWs(usuario));
-        });
+        for (Usuario usuario : usuarioList) {
+            usuariowsList.add(convertUsuarioToUsuariows(usuario));
+        }
         return usuariowsList;
     }
 }
+
 

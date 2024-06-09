@@ -1,10 +1,12 @@
+package com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.service;
+
+import com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.service.IUsuarioService;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.convert.UsuarioConvert;
 import com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.model.Usuario;
 import com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.repository.UsuarioRepository;
-import com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.service.IUsuarioService;
 import com.cibertec.ws.objects.Usuariows;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,24 +20,22 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public List<Usuariows> listarUsuarios() {
-        return usuarioConvert.convertUsuarioToUsuarioWs(
-                usuarioRepository.findAll());
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        return usuarioConvert.convertUsuarioListToUsuariowsList(usuarios);
     }
 
     @Override
     public Usuariows obtenerUsuarioPorId(int id) {
-        Optional<Usuario> usuario = usuarioRepository.findById(id);
-        return usuario.map(value ->
-                        usuarioConvert.convertUsuarioToUsuarioWs(value))
-                .orElse(null);
+        Optional<Usuario> usuarioOptional = usuarioRepository.findById(id);
+        return usuarioOptional.map(usuario -> usuarioConvert.convertUsuarioToUsuariows(usuario)).orElse(null);
     }
 
     @Override
-    public Usuariows registrarActualizarUsuario(Usuariows usuarioWs) {
-        Usuario nuevoUsuario = usuarioRepository.save(
-                usuarioConvert.convertUsuarioWsToUsuario(usuarioWs));
-        if (nuevoUsuario == null)
-            return null;
-        return usuarioConvert.convertUsuarioToUsuarioWs(nuevoUsuario);
+    public Usuariows registrarActualizarUsuario(Usuariows usuariows) {
+        Usuario usuario = usuarioConvert.convertUsuariowsToUsuario(usuariows);
+        Usuario nuevoUsuario = usuarioRepository.save(usuario);
+        return usuarioConvert.convertUsuarioToUsuariows(nuevoUsuario);
     }
 }
+
+

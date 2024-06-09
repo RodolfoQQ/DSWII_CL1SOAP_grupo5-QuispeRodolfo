@@ -1,20 +1,25 @@
 package com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.endpoint;
 
+
 import com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.exception.NotFoundException;
-import com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.service.IUsuarioService;
+import com.cibertec.DSWII_CL1SOAP_RodolfoQuispe.service.UsuarioService;
 import com.cibertec.ws.objects.*;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-@AllArgsConstructor
 @Endpoint
-public class UsuarioEndPoint {
+public class UsuarioEndpoint {
 
-    private final IUsuarioService usuarioService;
-    private static final String NAMESPACE_URL = "http://www.cibertec.edu.pe/ws/objects";
+    private static final String NAMESPACE_URL = "http://www.cibertec.com/ws/objects";
+    private final UsuarioService usuarioService;
+
+    @Autowired
+    public UsuarioEndpoint(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
+    }
 
     @PayloadRoot(namespace = NAMESPACE_URL, localPart = "getUsuariosRequest")
     @ResponsePayload
@@ -29,8 +34,9 @@ public class UsuarioEndPoint {
     public GetUsuarioResponse getUsuario(@RequestPayload GetUsuarioRequest request) {
         GetUsuarioResponse response = new GetUsuarioResponse();
         Usuariows usuariows = usuarioService.obtenerUsuarioPorId(request.getId());
-        if (usuariows == null)
+        if (usuariows == null) {
             throw new NotFoundException("El usuario con el ID " + request.getId() + " no existe!");
+        }
         response.setUsuario(usuariows);
         return response;
     }

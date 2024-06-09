@@ -30,13 +30,13 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("UsuariosPort");
         wsdl11Definition.setLocationUri("/ws/usuarios");
-        wsdl11Definition.setTargetNamespace("http://www.example.com/ws/objects");
+        wsdl11Definition.setTargetNamespace("http://www.cibertec.com/ws/objects");
         wsdl11Definition.setSchema(usuariosSchema);
         return wsdl11Definition;
     }
 
     @Bean
     public XsdSchema usuariosSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("xsd/usuarios.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("xsd/usuario.xsd"));
     }
 }
