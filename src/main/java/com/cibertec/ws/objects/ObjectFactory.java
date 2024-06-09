@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.0 
 // Visite https://eclipse-ee4j.github.io/jaxb-ri 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2024.06.08 a las 07:00:17 PM PET 
+// Generado el: 2024.06.08 a las 09:36:06 PM PET 
 //
 
 
@@ -37,59 +37,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetUsuariosRequest }
+     * Create an instance of {@link ConvertirSegundosAMinutosRequest }
      * 
      */
-    public GetUsuariosRequest createGetUsuariosRequest() {
-        return new GetUsuariosRequest();
+    public ConvertirSegundosAMinutosRequest createConvertirSegundosAMinutosRequest() {
+        return new ConvertirSegundosAMinutosRequest();
     }
 
     /**
-     * Create an instance of {@link GetUsuariosResponse }
+     * Create an instance of {@link ConvertirSegundosAMinutosResponse }
      * 
      */
-    public GetUsuariosResponse createGetUsuariosResponse() {
-        return new GetUsuariosResponse();
-    }
-
-    /**
-     * Create an instance of {@link Usuariows }
-     * 
-     */
-    public Usuariows createUsuariows() {
-        return new Usuariows();
-    }
-
-    /**
-     * Create an instance of {@link GetUsuarioRequest }
-     * 
-     */
-    public GetUsuarioRequest createGetUsuarioRequest() {
-        return new GetUsuarioRequest();
-    }
-
-    /**
-     * Create an instance of {@link GetUsuarioResponse }
-     * 
-     */
-    public GetUsuarioResponse createGetUsuarioResponse() {
-        return new GetUsuarioResponse();
-    }
-
-    /**
-     * Create an instance of {@link PostUsuarioRequest }
-     * 
-     */
-    public PostUsuarioRequest createPostUsuarioRequest() {
-        return new PostUsuarioRequest();
-    }
-
-    /**
-     * Create an instance of {@link PostUsuarioResponse }
-     * 
-     */
-    public PostUsuarioResponse createPostUsuarioResponse() {
-        return new PostUsuarioResponse();
+    public ConvertirSegundosAMinutosResponse createConvertirSegundosAMinutosResponse() {
+        return new ConvertirSegundosAMinutosResponse();
     }
 
 }

@@ -3,22 +3,22 @@
            targetNamespace="http://www.cibertec.com/ws/objects"
            elementFormDefault="qualified">
 
-    <xs:element name="getEspecialidadesRequest">
+    <xs:element name="getRolesRequest">
         <xs:complexType>
             <xs:sequence />
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getEspecialidadesResponse">
+    <xs:element name="getRolesResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="especialidades" type="tns:especialidad" maxOccurs="unbounded" />
+                <xs:element name="roles" type="tns:rol" maxOccurs="unbounded" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <!-- Buscar especialidad por ID -->
-    <xs:element name="getEspecialidadRequest">
+    <!-- Buscar rol por ID -->
+    <xs:element name="getRolRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:int" />
@@ -26,38 +26,35 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getEspecialidadResponse">
+    <xs:element name="getRolResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="especialidad" type="tns:especialidad" />
+                <xs:element name="rol" type="tns:rol" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <!-- Guardar y Actualizar especialidad -->
-    <xs:element name="postEspecialidadRequest">
+    <!-- Guardar y Actualizar rol -->
+    <xs:element name="postRolRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="especialidad" type="tns:especialidad" />
+                <xs:element name="rol" type="tns:rol" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="postEspecialidadResponse">
+    <xs:element name="postRolResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="especialidad" type="tns:especialidad" />
+                <xs:element name="rol" type="tns:rol" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="especialidad">
+    <xs:complexType name="rol">
         <xs:sequence>
-            <xs:element name="IdEspecialidad" type="xs:int"/>
-            <xs:element name="Titulo" type="xs:string"/>
-            <xs:element name="Funcion" type="xs:string"/>
-            <xs:element name="FechGraduacion" type="xs:date"/>
-            <xs:element name="IdMedico" type="xs:int"/>
+            <xs:element name="idrol" type="xs:int"/>
+            <xs:element name="nomrol" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
